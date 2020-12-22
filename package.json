@@ -1,0 +1,14 @@
+{
+  "name": "liah",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "r": "node index.js"
+  },
+  "author": "CwihteKJ",
+  "license": "GNUv3",
+  "dependencies": {
+    "discord.js": "^12.5.1"
+  }
+}
