@@ -9,6 +9,11 @@
   "author": "CwihteKJ",
   "license": "GNUv3",
   "dependencies": {
-    "discord.js": "^12.5.1"
+    "@wonderbot/format-date": "^1.0.2",
+    "@wonderbot/utils": "^1.0.1",
+    "discord.js": "^12.5.1",
+    "inko": "^1.1.1",
+    "knex": "^0.21.14",
+    "uuid": "^8.3.2"
   }
 }
