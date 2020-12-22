@@ -2,7 +2,7 @@ const config = require("../config")
 const commands = {}
 const locale = require("../locale").ko
 
-commands.noah = require("./liah")
+commands.liah = require("./liah")
 commands.develop = require("./develop")
 
 module.exports.categorys = commands
