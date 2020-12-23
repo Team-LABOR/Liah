@@ -1,4 +1,11 @@
-module.exports.execute = async (client, message, locale, embed, _tools, knex) => {
+module.exports.execute = async (
+  client,
+  message,
+  locale,
+  embed,
+  _tools,
+  knex
+) => {
   message.channel.send(locale.commands.ping.ping).then((m) => {
     const time = new Date()
     knex("users")

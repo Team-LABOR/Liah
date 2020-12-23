@@ -11,11 +11,17 @@ module.exports.execute = async (client, message, locale, embed) => {
       let cmds = cmdFormat(commands.categorys[cat])
       if (cmds) embed.addField(cat.toUpperCase(), cmds)
     })
-    embed.addField(locale.commands.help.more, locale.commands.help.moreDesc.bind({ prefix: message.data.prefix }))
+    embed.addField(
+      locale.commands.help.more,
+      locale.commands.help.moreDesc.bind({ prefix: message.data.prefix })
+    )
     embed.addField(locale.commands.help.support, locale.commands.help.links)
     return message.channel.send(embed)
   } else {
-    const cmd = commands[message.data.arg[0]] || commands[inko.en2ko(message.data.arg[0])] || commands[inko.ko2en(message.data.arg[0])]
+    const cmd =
+      commands[message.data.arg[0]] ||
+      commands[inko.en2ko(message.data.arg[0])] ||
+      commands[inko.ko2en(message.data.arg[0])]
     if (!cmd) return message.reply(locale.commands.help.noCommand)
     embed.setTitle(
       "> " +
@@ -23,10 +29,22 @@ module.exports.execute = async (client, message, locale, embed) => {
           cmd: cmd.props.name.toUpperCase(),
         })
     )
-    embed.addField(locale.commands.help.description, "```fix\n" + cmd.props.desc + "```")
-    embed.addField(locale.commands.help.usage, locale.error.usage(cmd.props.name, message.data.prefix))
-    embed.addField(locale.commands.help.other, "`" + cmd.props.alias.join("`, `") + "`")
-    embed.addField(locale.commands.help.docs, cmd.props.docs ? cmd.props.docs : locale.commands.help.nodoc)
+    embed.addField(
+      locale.commands.help.description,
+      "```fix\n" + cmd.props.desc + "```"
+    )
+    embed.addField(
+      locale.commands.help.usage,
+      locale.error.usage(cmd.props.name, message.data.prefix)
+    )
+    embed.addField(
+      locale.commands.help.other,
+      "`" + cmd.props.alias.join("`, `") + "`"
+    )
+    embed.addField(
+      locale.commands.help.docs,
+      cmd.props.docs ? cmd.props.docs : locale.commands.help.nodoc
+    )
     message.reply(embed)
   }
 }

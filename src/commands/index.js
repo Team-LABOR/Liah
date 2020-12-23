@@ -4,6 +4,7 @@ const locale = require("../locale").ko
 
 commands.liah = require("./liah")
 commands.develop = require("./develop")
+commands.money = require("./money")
 
 module.exports.categorys = commands
 console.log("Ready for commands.")

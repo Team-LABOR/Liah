@@ -1,1 +1,1 @@
-node src/sharding
+cd ./src && node sharding
