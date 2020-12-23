@@ -54,6 +54,10 @@ module.exports = {
       thanks:
         "봇의 약관을 동의해주셔서 감사합니다! 이제 모든 기능을 이용하실 수 있습니다.",
     },
+    wallet: {
+      CMDDESC: "현재 소지 금액을 확인합니다.",
+      message: "{author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
+    },
   },
   link: {
     tos: "https://naver.com",
