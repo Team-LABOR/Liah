@@ -36,7 +36,7 @@ module.exports = {
       this: "🏓 퐁!",
       return:
         "봇 지연시간: {botLatency}ms\nAPI 지연시간: {APILatency}ms\nDB 쿼리 지연시간: {DBLatency}ms",
-    },
+    },  
     register: {
       CMDDESC: "봇 서비스에 가입합니다.",
       message:
@@ -58,6 +58,44 @@ module.exports = {
       CMDDESC: "현재 소지 금액을 확인합니다.",
       message: "{author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
     },
+    ban: {
+      CMDDESC: '유저를 서버에서 차단합니다.',
+      alsoPerm:
+  '해당 유저는 봇의 권한으로 추방할 수 없어요. 유저권한을 다시 확인해주세요.',
+      wait: '해당 유저 차단을 시도중입니다.',
+      user: '🙍 유저',
+      mod: '👮 처리자',
+      modDesc: '관리자: {mod} ({tag})',
+      userDesc: '유저: {user} ({tag})',
+      reason: '📃 정보',
+      reasonDesc: '처벌 사유: {reason}',
+      Success: '🔨 차단',
+      notice:
+  '당신은 **{guild}**에서 차단되셨습니다.\n사유 : {reason}\n처리자 : {mod}',
+      error:
+  '차단에 실패하였습니다. 리아의 권한을 확인해주세요.\n직접 차단해주시는걸 권장드립니다.',
+      none: '없음.',
+      why: '사유: {reason} | 처리자: {by}'
+  },
+  kick: {
+      CMDDESC: '유저를 서버에서 추방합니다.',
+      alsoPerm:
+  '해당 유저는 봇의 권한으로 추방할 수 없어요. 유저권한을 다시 확인해주세요.',
+      wait: '해당 유저 추방을 시도중입니다.',
+      user: '🙍 유저',
+      mod: '👮 처리자',
+      modDesc: '관리자: {mod} ({tag})',
+      userDesc: '유저: {user} ({tag})',
+      reason: '📃 정보',
+      reasonDesc: '처벌 사유: {reason}',
+      Success: '🔨 추방',
+      notice:
+  '당신은 **{guild}**에서 추방되셨습니다.\n사유 : {reason}\n처리자 : {mod}',
+      error:
+  '추방에 실패하였습니다. 리아의 권한을 확인해주세요.\n직접 추방해주시는걸 권장드립니다.',
+      none: '없음.',
+      why: '사유: {reason} | 처리자: {by}'
+  },
   },
   link: {
     tos: "https://naver.com",
@@ -99,12 +137,12 @@ module.exports = {
       args.forEach((a) => {
         if (!a.type) return
         if (a.required) {
-          text += `[${a.options ? a.options.join("|") : usageNames[a.name]}] `
+          text += `[${a.options ? a.options.join('|') : usageNames[a.name]}] `
           desc += `[${usageNames[a.name]} - ${
-            usageNames[a.type.toString()]
+              usageNames[a.type.toString()]
           }](필수)\n`
-        } else {
-          text += `(${a.options ? a.options.join("|") : usageNames[a.name]})`
+      } else {
+          text += `(${a.options ? a.options.join('|') : usageNames[a.name]})`
           desc += `[${usageNames[a.name]} - ${usageNames[a.type.toString()]}]\n`
         }
       })
