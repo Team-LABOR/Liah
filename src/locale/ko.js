@@ -45,10 +45,16 @@ module.exports = {
         "대한민국 총 확진자 수: {allcorona}명\n 어제 확진자 수: {yesterdaycorona}명\n 오늘 확진자 수(집계중): {todaycorona}명\n 어제 지금 시간 확진자 수 `-` 현재 지금 시간 확진자 수: {todayminusyesterday}명",
     },  
     sat: {
-      CMDDESC: "수능까지 남은 일 수를 보여줍니다!",
+      CMDDESC: "수능까지 남은 일 수를 보여줍니다.",
       wait: "잠시만 기다려 주세요!",
       title: "수능까지 남은 일 수!",
       return: "수능까지 {day}일 남았습니다!",
+    },
+    hangangriver: {
+     CMDDESC: "현재 한강 수온을 보여줍니다." ,
+     wait: "잠시만 기다려주세요!",
+     title: "한강수온",
+     return: "현재 한강 수온은 `{river}℃` 입니다!",
     },
     register: {
       CMDDESC: "봇 서비스에 가입합니다.",
