@@ -26,7 +26,7 @@ module.exports.execute = async (
         .limit(1)
         .then(() => {
             embed.addField(
-              locale.commands.corona.title,
+              locale.commands.corona.sub,
             locale.commands.corona.return.bind({
               allcorona: overview.total_confirmed_person,
               yesterdaycorona: overview.yesterday_confirmed_person,
