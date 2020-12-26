@@ -56,6 +56,13 @@ module.exports = {
      title: "한강수온",
      return: "현재 한강 수온은 `{river}℃` 입니다!",
     },
+    say: {
+      CMDDESC: "앵무새처럼 따라 말합니다.",
+      wait: "잠시만 기다려주세요!",
+      title: "말해!",
+      bird: "나는 앵무새 리아!",
+      return: "{say}",
+    },
     register: {
       CMDDESC: "봇 서비스에 가입합니다.",
       message:
