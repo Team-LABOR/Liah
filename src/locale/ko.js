@@ -36,6 +36,13 @@ module.exports = {
       this: "🏓 퐁!",
       return:
         "봇 지연시간: {botLatency}ms\nAPI 지연시간: {APILatency}ms\nDB 쿼리 지연시간: {DBLatency}ms",
+    },
+    corona: {
+      CMDDESC: "대한민국의 코로나 현황을 보여줍니다.",
+      wait: "잠시만 기다려 주세요!",
+      title: "코로나!",
+      return:
+        "대한민국 총 확진자 수: {allcorona}명\n 어제 확진자 수: {yesterdaycorona}명\n 오늘 확진자 수(집계중): {todaycorona}명\n 어제 지금 시간 확진자 수 `-` 현재 지금 시간 확진자 수: {todayminusyesterday}명",
     },  
     register: {
       CMDDESC: "봇 서비스에 가입합니다.",
