@@ -11,6 +11,7 @@
   "dependencies": {
     "@wonderbot/format-date": "^1.0.2",
     "@wonderbot/utils": "^1.0.1",
+    "axios": "^0.21.1",
     "discord.js": "^12.5.1",
     "inko": "^1.1.1",
     "knex": "^0.21.14",
