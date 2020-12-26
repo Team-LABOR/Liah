@@ -96,10 +96,17 @@ module.exports = {
       none: '없음.',
       why: '사유: {reason} | 처리자: {by}'
   },
-  },
-  link: {
+    serverinfo: {
+      CMDDESC: "서버의 정보를 보여줍니다.",
+      wait: "잠시만 기다려주세요!",
+      title: "서버정보!",
+     return:
+        "정보\n**❯ 이름:**: {name}\n**❯ 아이디:**: {id}\n**❯ 관리자:**{owner}\n**❯ 지역:**: {area}\n**❯ 부스트 티어:**: {boost} \n**❯ 필터**: {filter}\n**❯ 보안 레벨:**: {Securitylevel}\n**❯ 만든일:**: {creatday}\n통계\n**❯ 역할 수:**: {rolesnumber}\n**❯ 이모지 수:**: {emojinumber}\n**❯ 일반 이모지 수**: {Generalemojinumber}\n**❯ 애니매이션 이모지 수**: {animationemojisnumber}\n**❯ 총 멤버 수**: {membernumber}\n**❯ 유저 수**: {usermembernumber}\n**❯ 봇 수**: {botmembernumber}\n**❯ 채팅 채널 수**: {channelnumber}\n**❯ 음성 채널 수**: {voicechannelnumber}\n**❯ 부스트 수**: {boostnumber}\n상태\n**❯ 온라인**: {online}\n**❯ 자리비움**: {idle}\n**❯ 다른 용무 중**: {dnd}\n**❯ 오프라인**:{offline}",
+    },  
+    link: {
     tos: "https://naver.com",
     privacy: "https://pornhub.com/",
+  },
   },
   error: {
     nodesc: "설명이 없습니다.",
