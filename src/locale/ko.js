@@ -35,12 +35,13 @@ module.exports = {
       pong: "퐁!",
       this: "🏓 퐁!",
       return:
-        "봇 지연시간: {botLatency}ms\nAPI 지연시간: {APILatency}ms\nDB 쿼리 지연시간: {DBLatency}ms",
+        "<:ping:792295546186104853> 봇 지연시간: {botLatency}ms\n<:api:792294515725434890> API 지연시간: {APILatency}ms\n<:db:792294663406616577> DB 쿼리 지연시간: {DBLatency}ms",
     },
     corona: {
       CMDDESC: "대한민국의 코로나 현황을 보여줍니다.",
       wait: "잠시만 기다려 주세요!",
       title: "코로나!",
+      sub: "<:corona:792294434526986300> 코로나!",
       return:
         "대한민국 총 확진자 수: {allcorona}명\n 어제 확진자 수: {yesterdaycorona}명\n 오늘 확진자 수(집계중): {todaycorona}명\n 어제 지금 시간 확진자 수 `-` 현재 지금 시간 확진자 수: {todayminusyesterday}명",
     },  
@@ -48,20 +49,20 @@ module.exports = {
       CMDDESC: "수능까지 남은 일 수를 보여줍니다.",
       wait: "잠시만 기다려 주세요!",
       title: "수능까지 남은 일 수!",
-      return: "수능까지 {day}일 남았습니다!",
+      return: "<:study:792294726476496906> 수능까지 {day}일 남았습니다!",
     },
     hangangriver: {
      CMDDESC: "현재 한강 수온을 보여줍니다." ,
      wait: "잠시만 기다려주세요!",
      title: "한강수온",
-     return: "현재 한강 수온은 `{river}℃` 입니다!",
+     return: "<:river:792295586572664842> 현재 한강 수온은 `{river}℃` 입니다!",
     },
     say: {
       CMDDESC: "앵무새처럼 따라 말합니다.",
       wait: "잠시만 기다려주세요!",
       title: "말해!",
       bird: "나는 앵무새 리아!",
-      return: "{say}",
+      return: "<:say:792301655877222410> {say}",
     },
     register: {
       CMDDESC: "봇 서비스에 가입합니다.",
@@ -73,7 +74,7 @@ module.exports = {
       privacy: "개인정보취급방침",
       to: "바로가기",
       yet:
-        "아직 약관에 동의하지 않으셨습니다.\n해당 채널에 `동의합니다.`를 입력하시면 모든 약관을 수락하신걸로 간주됩니다.",
+        "<:service:792301678480326656> 아직 약관에 동의하지 않으셨습니다.\n해당 채널에 `동의합니다.`를 입력하시면 모든 약관을 수락하신걸로 간주됩니다.",
       start: "봇을 이용하시려면 반드시 다음 약관에 동의하셔야합니다.",
       code: "동의합니다.",
       timeout: "시간이 초과되어 취소되었습니다.",
@@ -82,7 +83,7 @@ module.exports = {
     },
     wallet: {
       CMDDESC: "현재 소지 금액을 확인합니다.",
-      message: "{author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
+      message: "<:money:792294639860187146> {author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
     },
     ban: {
       CMDDESC: '유저를 서버에서 차단합니다.',
