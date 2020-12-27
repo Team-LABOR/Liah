@@ -64,6 +64,13 @@ module.exports = {
       bird: "나는 앵무새 리아!",
       return: "<:say:792301655877222410> {say}",
     },
+    clear: {
+      CMDDESC: "메시지를 삭제합니다",
+      wait: "잠시만 기다려주세요!",
+      title: "청소!",
+      excess: "1부터 100까지의 숫자만 입력해주세요!",
+      message: "<@{member}> `{number}` 개의 메시지를 삭제했습니다. (이 메시지는 잠시 후 사라집니다.)",
+    },
     register: {
       CMDDESC: "봇 서비스에 가입합니다.",
       message:
