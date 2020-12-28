@@ -62,7 +62,13 @@ module.exports = {
       wait: "잠시만 기다려주세요!",
       title: "말해!",
       bird: "나는 앵무새 리아!",
-      return: "<:say:792301655877222410> {say}",
+      return: "<:say:792304093158047744> {say}",
+    },
+    userinfo: {
+      CMDDESC: "유저 정보를 보여줍니다.",
+      wait:"잠시만 기다려주세요!",
+      title: "유저정보!",
+      message: "이름: {name}\n 태그 {tag}\n 아이디: {id}\n 프로필: [클릭]({avatar})\n지정상태: {status}",
     },
     clear: {
       CMDDESC: "메시지를 삭제합니다",
