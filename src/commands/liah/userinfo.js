@@ -17,9 +17,9 @@ module.exports.execute = async (
         .replace("web", "웹")
       clientstatus.push(key)
     }
-
     let activity = message.author.presence.activities[0]
-    let a = activity.name === "Custom Status" ? activity.state : activity.name
+    let a = activity === undefined ? "상태메시지 없음" : activity.name === "Custom Status" ? activity.state : activity.name
+    
     knex("users")
       .select("*")
       .limit(1)
