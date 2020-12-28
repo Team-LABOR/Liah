@@ -15,7 +15,7 @@ module.exports.execute = async (
         .limit(1)
         .then(() => {
           embed.addField(
-            locale.commands.hangangriver.setTitle,
+            locale.commands.hangangriver.title,
             locale.commands.hangangriver.return.bind({
               river: x.data.temp,
             })
