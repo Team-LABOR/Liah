@@ -15,11 +15,9 @@ module.exports.execute = async (
       overview = {
         total_confirmed_person: overview.confirmed[0], // 총 확진자수
         yesterday_confirmed_person: overview.confirmed[1], // 어제 확진자수
-
         current_confirmed_person: overview.current[0], // 현재 확진자수
         current_confirmed_person_diff: overview.current[1], // (어제 이 시간대 확진자 수 - 현재 이 시간대 확진자 수)
       }
-
       knex("users")
         .select("*")
         .limit(1)
