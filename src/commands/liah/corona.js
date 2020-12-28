@@ -8,7 +8,6 @@ module.exports.execute = async (
 ) => {
   message.channel.send(locale.commands.corona.wait).then((m) => {
     const request = require("request")
-
     let url = "https://apiv2.corona-live.com/stats.json"
     request(url, (error, response, body) => {
       let overview = JSON.parse(response.body).overview
