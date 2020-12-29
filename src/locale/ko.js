@@ -99,7 +99,7 @@ module.exports = {
     wallet: {
       CMDDESC: "현재 소지 금액을 확인합니다.",
       message:
-        "<:money:792294639860187146> {author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
+        "<:money:792303770453016596> {author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
     },
     ban: {
       CMDDESC: "유저를 서버에서 차단합니다.",
@@ -144,7 +144,14 @@ module.exports = {
       wait: "잠시만 기다려주세요!",
       title: "서버정보!",
       return:
-        "정보\n**❯ 이름:**: {name}\n**❯ 아이디:**: {id}\n**❯ 관리자:**{owner}\n**❯ 지역:**: {area}\n**❯ 부스트 티어:**: {boost} \n**❯ 필터**: {filter}\n**❯ 보안 레벨:**: {Securitylevel}\n**❯ 만든일:**: {creatday}\n통계\n**❯ 역할 수:**: {rolesnumber}\n**❯ 이모지 수:**: {emojinumber}\n**❯ 일반 이모지 수**: {Generalemojinumber}\n**❯ 애니매이션 이모지 수**: {animationemojisnumber}\n**❯ 총 멤버 수**: {membernumber}\n**❯ 유저 수**: {usermembernumber}\n**❯ 봇 수**: {botmembernumber}\n**❯ 채팅 채널 수**: {channelnumber}\n**❯ 음성 채널 수**: {voicechannelnumber}\n**❯ 부스트 수**: {boostnumber}\n상태\n**❯ 온라인**: {online}\n**❯ 자리비움**: {idle}\n**❯ 다른 용무 중**: {dnd}\n**❯ 오프라인**:{offline}",
+        "정보\n**❯ 이름:**: {name}\n**❯ 아이디:**: {id}\n**❯ 관리자:**{owner}\n**❯ 지역:**: {area}\n**❯ 필터**: {filter}\n**❯ 보안 레벨:**: {Securitylevel}\n**❯ 만든일:**: {creatday}\n통계\n**❯ 이모지 수:**: {emojinumber}\n**❯ 일반 이모지 수**: {Generalemojinumber}\n**❯ 애니매이션 이모지 수**: {animationemojisnumber}\n**❯ 총 멤버 수**: {membernumber}\n**❯ 유저 수**: {usermembernumber}\n**❯ 봇 수**: {botmembernumber}\n**❯ 채팅 채널 수**: {channelnumber}\n**❯ 음성 채널 수**: {voicechannelnumber}\n**❯ 부스트 수**: {boostnumber}\n상태\n**❯ 온라인**: {online}\n**❯ 자리비움**: {idle}\n**❯ 다른 용무 중**: {dnd}\n**❯ 오프라인**:{offline}",
+    },
+    ask: {
+      CMDDESC: "로아의 개발자 및 스태프에게 할 말을 전합니다.",
+      wait: "잠시만 기다려주세요!",
+      title: "문의",
+      donot: "문의 할 내용이 비어있습니다.",
+      message: "문의해 주셔서 감사합니다! 답변은 DM 으로 전송됩니다!\n 보낸내용 : {contents}",
     },
     link: {
       tos: "https://naver.com",
@@ -204,4 +211,42 @@ module.exports = {
         `
     },
   },
+}
+
+const usageNames = {
+    option: '옵션',
+    number: '숫자',
+    money: '돈',
+    text: '텍스트',
+    user: '유저',
+    stock: '아이템',
+    count: '수량',
+    script: '스크립트',
+    'user/text': '유저 또는 텍스트',
+    delivery: '택배사',
+    bill: '운송장',
+    item: '아이템',
+    botid: '봇 아이디',
+    perm: '권한',
+    'user/id': '유저 또는 아이디',
+    gamemode: '게임모드',
+    battletag: '배틀태그',
+    city: '도시명',
+    reason: '사유',
+    channel: '채널',
+    warnlimt: '경고 한도',
+    cmd: '명령어',
+    address: '주소',
+    season: '시즌',
+    periodic: '원소기호',
+    bet: '배팅금',
+    seconds: '시간(초)',
+    currency: '변환할 화폐단위',
+    iso4217: 'ISO 4217 코드',
+    fromMoney: '변환할 금액',
+    moneyresolvable: '숫자+화폐단위',
+    prefix: '변경할 접두사',
+    sender: '전송자',
+    station: '역명',
+    domain: '도메인'
 }
