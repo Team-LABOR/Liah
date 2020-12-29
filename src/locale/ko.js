@@ -99,7 +99,7 @@ module.exports = {
     wallet: {
       CMDDESC: "현재 소지 금액을 확인합니다.",
       message:
-        "<:money:792303770453016596> {author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
+        "<:money:792303770453016596> {author} 님의 소지 금액은 `{hasmoney}`원 입니다!\n 명령어를 쓸 때마다 `50`원이 추가됩니다!",
     },
     botinfo: {
       CMDDESC: "봇의 정보를 보여줍니다.",
@@ -159,6 +159,16 @@ module.exports = {
       donot: "문의 할 내용이 비어있습니다.",
       message: "문의해 주셔서 감사합니다! 답변은 DM 으로 전송됩니다!\n 보낸내용 : {contents}",
     },
+     payday: {
+            CMDDESC: '1시간마다 돈을 지급받습니다.',
+            COOLDOWN: 3600,
+            cooldown: '쿨타임중입니다.\n`{time}`분 후에 사용가능합니다.',
+            cooldownCustom: '쿨타임중입니다.\n`{time}` 사용가능합니다.',
+            success:
+        '당신의 잔고에 `500` <:coin:636879213239992330>을 추가했습니다!\n잔고 : `{money}` <:coin:636879213239992330>',
+            premium:
+        '당신의 잔고에 `500` <:coin:636879213239992330>을 추가했습니다!\n__원더봇 프리미엄__을 가입하셨군요! `200` <:coin:636879213239992330>을 추가지급합니다!\n잔고 : `{money}` <:coin:636879213239992330>'
+        },
     link: {
       tos: "https://naver.com",
       privacy: "https://pornhub.com/",
