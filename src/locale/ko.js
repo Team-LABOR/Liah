@@ -101,6 +101,12 @@ module.exports = {
       message:
         "<:money:792303770453016596> {author} 님의 소지 금액은 `{hasmoney}`원 입니다!",
     },
+    botinfo: {
+      CMDDESC: "봇의 정보를 보여줍니다.",
+      wait: "잠시만 기다려주세요!",
+      title: "리아의 정보!",
+      message: "이름 : {name}\n 태그 : #{tag}\n 상태 : {status} \n 봇 구동 시간 : {uptime} \n 깃허브 : [클릭]({github})\n 한국 디스코드 봇 리스트 : [클릭]({koreanbots})\n 지원서버 : [클릭]({supportserver})",
+    },
     ban: {
       CMDDESC: "유저를 서버에서 차단합니다.",
       alsoPerm:
