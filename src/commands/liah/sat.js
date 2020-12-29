@@ -6,7 +6,21 @@ module.exports.execute = async (
   _tools,
   knex
 ) => {
-  message.channel.send(locale.commands.sat.title).then((m) => {
+  
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
+  message.channel.send(locale.commands.sat.wait).then((m) => {
     var t = new Date()
     var theDate = new Date(2021, 11, 03)
     var diffDate = theDate - t

@@ -1,66 +1,61 @@
+  const ms = require('@wonderbot/ms').ms
 module.exports.execute = async (
-  client,
-  message,
-  locale,
-  embed,
-  tools,
-  knex
+    client,
+    message,
+    locale,
+    embed,
+    tools,
+    knex
 ) => {
-  if (!message.data.args)
-    return message.reply(
-      locale.error.usage(message.data.cmd, message.data.prefix)
-    )
-  const blacks = await knex("blacklist")
-  const user = message.mentions.members.first()
-    ? message.mentions.members.first().id
-    : message.data.arg[1]
+    if (!message.data.args)
+        return message.reply(locale.error.usage(message.data.cmd, message.data.prefix))
+    const blacks = await knex('blacklist')
+    const { owners } = require('../../config/client')
+    const user = message.mentions.members.first()
+        ? message.mentions.members.first().id
+        : message.data.arg[1]
 
-  if (["add", "추가", "a"].includes(message.data.arg[0])) {
-    if (!user) return message.reply("유저 인자가 비었습니다.")
-    if (blacks.find((r) => r.id === user))
-      return message.reply("이미 존재하는 유저입니다.")
-    await knex("blacklist").insert({
-      id: user,
-      why: message.content
-        .replace(message.data.prefix, "")
-        .split(" ")
-        .splice(4)
-        .join(" "),
-    })
-    return message.reply(
-      `BLACKLIST ADDED | ID: ${user} | REASON: ${message.content
-        .replace(message.data.prefix, "")
-        .split(" ")
-        .splice(4)
-        .join(" ")}`
-    )
-  } else if (["remove", "삭제", "rm"].includes(message.data.arg[0])) {
-    if (!user) return message.reply("유저 인자가 비었습니다.")
-    if (!blacks.find((r) => r.id === user))
-      return message.reply("존재하지않는 유저입니다.")
-    await knex("blacklist").where({ id: user }).del()
-    return message.reply(`BLACKLIST REMOVED | ID: ${user}`)
-  } else
-    return message.reply(
-      locale.error.usage(message.data.cmd, message.data.prefix)
-    )
+    if (['add', '추가','등록', 'a'].includes(message.data.arg[0])){
+        if(!user) return message.reply('USER REQUIRED')
+        if( blacks.find(r=> r.id === user) ) return message.reply('Already Exists')
+        if(user == owners) return message.reply('아이고 주인님 제가 주인님을 블랙 할 순 없습니다 ㅠㅠ')    
+        const time = (Number(new Date()) + ms(message.data.arg[2]))
+        console.log(time)
+        await knex('blacklist').insert({ id: user, time: Math.round(time / 1000), why: message.content.replace(message.data.prefix, '').split(' ').splice(4).join(' ')})
+        return message.reply(`BLACKLIST ADDED | ID: ${user} | TO: ${new Date(time).fromNow()} | REASON: ${message.content.replace(message.data.prefix, '').split(' ').splice(4).join(' ')}`)
+    }
+    else if (['remove', '삭제','해제', '제거', 'rm'].includes(message.data.arg[0])){
+        if(!user) return message.reply('USER REQUIRED')
+        if( !blacks.find(r=> r.id === user) ) return message.reply('Not Existing')
+        await knex('blacklist').where({ id: user }).del()
+        return message.reply(`BLACKLIST REMOVED | ID: ${user}`)
+    }
+    else if (['list', '리스트', 'ls'].includes(message.data.arg[0])){
+        return message.reply(`\`\`\`bash\n${blacks.map(r => `$${r.id} | "${r.why}" | # ${new Date(r.time * 1000).fromNow()}`).join('\n')}\`\`\``)
+    }
+    else return message.reply(locale.error.usage(message.data.cmd, message.data.prefix))
 }
 
 module.exports.props = {
-  name: "blacklist",
-  perms: "dev",
-  alias: ["블랙리스트"],
-  args: [
-    {
-      name: "option",
-      type: "option",
-      required: true,
-      options: ["add", "list", "remove"],
-    },
-    {
-      name: "user",
-      type: "user",
-      required: true,
-    },
-  ],
+    name: 'blacklist',
+    perms: 'dev',
+    alias: ['블랙'],
+    args: [
+        {
+            name: 'option',
+            type: 'option',
+            required: true,
+            options: ['add', 'list', 'remove']
+        },
+        {
+            name: 'user',
+            type: 'user',
+            required: true
+        },
+        {
+            name: 'number',
+            type: 'number',
+            required: true
+        }
+    ]
 }

@@ -10,6 +10,20 @@ module.exports.execute = async (
     _tools,
     knex
     ) => {
+      
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
       const duration = moment.duration(client.uptime).format(" D [일], H [시], m [분], s [초]");
     message.channel.send(locale.commands.botinfo.wait).then((m) => {
       

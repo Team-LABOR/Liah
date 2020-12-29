@@ -8,17 +8,30 @@ const { prefix } = require('../../config/client_example')
     _tools,
     knex
   ) => {
+    var u = (
+      await knex
+          .select('*')
+          .from('users')
+          .where({ id: message.author.id })
+  )[0]
+  
+  await knex
+  .update({
+    money: Number(u['money']) + 50,
+  })
+  .where({ id: message.author.id })
+  .from('users')
     
      
 var clearnumber = message.content.slice(`${prefix}청소 `.length)
-    var isNum = !isNaN(clearnumber)
+var isNum = !isNaN(clearnumber)
 
     if (isNum && (clearnumber <= 0.9 || 99.9 < clearnumber)) {
       message.channel.send(locale.commands.clear.excess)
       return
     } else if (!isNum) {
       
-      if (message.content.split("<@").length == 2) {
+      if (message.content.split("<@").length == 2) {  
         if (isNaN(message.content.split(" ")[2])) return
 
         var user = message.content.split(" ")[1].split("<@!")[1].split(">")[0]

@@ -7,6 +7,19 @@ module.exports.execute = async (
   _tools,
   knex
 ) => {
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
   message.channel.send(locale.commands.serverinfo.wait).then((m) => {
     const filterLevels = {
       DISABLED: "Off",
@@ -37,14 +50,12 @@ module.exports.execute = async (
             id: message.guild.id,
             owner: message.guild.owner.user.tag,
             area: message.guild.region,
-            booster: message.guild.premiumTier,
             filter: filterLevels[message.guild.explicitContentFilter],
             Securitylevel: verificationLevels[message.guild.verificationLevel],
             creatday:
               moment(message.guild.createdTimestamp).format("LT") +
               moment(message.guild.createdTimestamp).format("LL") +
-              moment(message.guild.createdTimestamp).fromNow(),
-            rolenumber: message.guild.roles.cache.size,
+              moment(message.guild.createdTimestamp).fromNow(), 
             emojinumber: message.guild.emojis.cache.size,
             Generalemojinumber: emojis.filter((emoji) => !emoji.animated).size,
             animationemojisnumber: emojis.filter((emoji) => emoji.animated)

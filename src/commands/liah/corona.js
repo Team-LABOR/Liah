@@ -6,6 +6,20 @@ module.exports.execute = async (
   _tools,
   knex
 ) => {
+  
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
   message.channel.send(locale.commands.corona.wait).then((m) => {
     const request = require("request")
     let url = "https://apiv2.corona-live.com/stats.json"
@@ -33,7 +47,7 @@ module.exports.execute = async (
 
           m.edit({ content: locale.commands.corona.title, embed })
         })
-    })
+      })
   })
 }
 module.exports.props = {

@@ -3,6 +3,19 @@ const inko = new Inko()
 
 const commands = require("../index")
 module.exports.execute = async (client, message, locale, embed) => {
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
   if (!message.data.args) {
     embed.setTitle(locale.commands.help.help)
     embed.setDescription(locale.commands.help.desc)

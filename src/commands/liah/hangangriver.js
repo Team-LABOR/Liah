@@ -8,6 +8,19 @@ module.exports.execute = async (
   _tools,
   knex
 ) => {
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
   axios.get("http://hangang.dkserver.wo.tc/").then(function (x) {
     message.channel.send(locale.commands.hangangriver.wait).then((m) => {
       knex("users")

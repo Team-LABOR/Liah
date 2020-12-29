@@ -7,6 +7,19 @@ module.exports.execute = async (
   _tools,
   knex
 ) => {
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
   message.channel.send(locale.commands.say.wait).then((m) => {
     const text = message.content.slice(`${prefix}말해 `.length)
 

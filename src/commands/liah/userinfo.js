@@ -6,6 +6,19 @@ module.exports.execute = async (
   _tools,
   knex
 ) => {
+  var u = (
+    await knex
+        .select('*')
+        .from('users')
+        .where({ id: message.author.id })
+)[0]
+
+await knex
+.update({
+  money: Number(u['money']) + 50,
+})
+.where({ id: message.author.id })
+.from('users')
   message.channel.send(locale.commands.userinfo.wait).then((m) => {
     let _status = message.author.presence.clientStatus
     let clientstatus = []
@@ -16,7 +29,7 @@ module.exports.execute = async (
         .replace("desktop", "컴퓨터")
         .replace("web", "웹")
       clientstatus.push(key)
-    }
+    } 
     let activity = message.author.presence.activities[0]
     let a = activity === undefined ? "상태메시지 없음" : activity.name === "Custom Status" ? activity.state : activity.name
     
@@ -33,6 +46,7 @@ module.exports.execute = async (
             avatar: message.author.avatarURL({ format: "png" }),
             status: a,
             client: clientstatus.join(", "),
+
           })
         )
 
